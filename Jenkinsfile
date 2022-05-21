@@ -1,8 +1,9 @@
 pipeline {
     agent any
-    tools{
-        nodejs "18.1.0"
-    }
+
+    parameters {
+        string(name: 'VERSION', defaultValue: '18.1.0', description: '')
+        }
     stages {
         stage("npm-login-cli"){
         steps{
