@@ -34,8 +34,8 @@ pipeline {
             steps {
                echo "publishing.."
 			    sh 'docker build . -f docker4.dockerfile -t publish'
-				sh "docker run --volume /var/jenkins_home/workspace/volumes" //:/final publish mv nodejs.tar.xz /final"
-              archiveArtifacts artifacts:'nodejs.tar.xz'
+				sh "docker run --volume /var/jenkins_home/workspace/volumes publish nodejs.tar.xz" //:/final publish mv nodejs.tar.xz /final"
+             // archiveArtifacts artifacts:'nodejs.tar.xz'
 				echo "NODEJS.ORG VERSION ${params.version} HAS BEEN PUBLISHED" 	
 
             }
