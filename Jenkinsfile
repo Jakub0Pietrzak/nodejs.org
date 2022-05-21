@@ -5,11 +5,11 @@ pipeline {
         string(name: 'VERSION', defaultValue: '18.1.0', description: '')
         }
     stages {
-        stage("npm-login-cli"){
-        steps{
-        sh 'npm -v'
-        }
-        }
+      //  stage("npm-login-cli"){
+       // steps{
+       // sh 'npm -v'
+      //  }
+      //  }
         stage("build") {
             steps {
                 echo "building.." 
